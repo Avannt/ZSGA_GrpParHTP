@@ -1,0 +1,148 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://usdpedra:44320/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSGA_C_GRPPARHTP_CDS" xml:lang="pt" sap:schema-version="1">
+			<EntityType Name="I_DraftAdministrativeDataType" sap:label="Dados administrativos para rascunho" sap:content-version="1">
+				<Key><PropertyRef Name="DraftUUID"/></Key><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Rascunho (ID técn.)" sap:quickinfo="Rascunho (ID técnico)"/><Property Name="DraftIsKeptByUser" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Esboço mantido pelo usuário"/><Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Esboço bloqueado desde"/><Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Rascunho criado por mim"/><Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Esboço modificado em último por mim"/><Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Esboço processado por mim"/><Property Name="CreatedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Esboço criado por (descrição)"/><Property Name="LastChangedByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Última modif.ao esboço por (descrição)"
+					sap:quickinfo="Última modificação ao esboço por (descrição)"/><Property Name="InProcessByUserDescription" Type="Edm.String" MaxLength="80" sap:label="Esboço processado por (descrição)"/><Property Name="DraftEntityType" Type="Edm.String" MaxLength="30" sap:display-format="UpperCase" sap:label="ID entidade rascunho"
+					sap:quickinfo="ID de entidade de rascunho"/><Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Esboço criado a"/><Property Name="CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="CreatedByUserDescription"
+					sap:label="Esboço criado por"/><Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Última modificação do esboço a"/><Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="LastChangedByUserDescription"
+					sap:label="Última modificação do esboço por"/><Property Name="DraftAccessType" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Tp.acesso a rascunho"
+					sap:quickinfo="Tipo de acesso a rascunho"/><Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Esboço em processamento desde"/><Property Name="InProcessByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="InProcessByUserDescription"
+					sap:label="Esboço processado por"/></EntityType>
+			<EntityType Name="ZSGA_C_GrpParDetTPType" sap:label="Grupo de parâmetros - D - TP - Cons" sap:content-version="1">
+				<Key><PropertyRef Name="GrupoParametroTopo"/><PropertyRef Name="GrupoParametroDet"/><PropertyRef Name="DraftUUID"/><PropertyRef Name="IsActiveEntity"/></Key><Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GrupoParametroTopo" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Código"
+					sap:quickinfo="Código do Grupo de Parâmetros - Topo"/><Property Name="GrupoParametroDet" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Linha"
+					sap:quickinfo="Código do Grupo de Parâmetros - Detalhe"/><Property Name="Parametros" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="ID do Parâmetro"
+					sap:quickinfo="Código do Parâmetro"/><Property Name="ValorMaximo" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Valor máximo"
+					sap:quickinfo="Valor Máximo do Parâmetro"/><Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Schlüssel"/><Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Esboço criado a"/><Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Última modificação do esboço a"/><Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tem documento ativo" sap:sortable="false"/><Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tem esboço" sap:sortable="false"/><Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Está ativo"
+					sap:sortable="false"/><NavigationProperty Name="DraftAdministrativeData" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"
+					FromRole="FromRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D" ToRole="ToRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"/><NavigationProperty Name="SiblingEntity" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_ECB9F9C0BF431BC58AC98F431336AC0B"
+					FromRole="FromRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B" ToRole="ToRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B"/><NavigationProperty Name="to_topo" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_E3EB8DB55F13EFC8673981397B83E811"
+					FromRole="FromRole_assoc_E3EB8DB55F13EFC8673981397B83E811" ToRole="ToRole_assoc_E3EB8DB55F13EFC8673981397B83E811"/><NavigationProperty Name="to_topotp" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_08143EDD353911E5A4469265B08AFC5B"
+					FromRole="ToRole_assoc_08143EDD353911E5A4469265B08AFC5B" ToRole="FromRole_assoc_08143EDD353911E5A4469265B08AFC5B"/></EntityType>
+			<EntityType Name="ZSGA_C_GrpParHTPType" sap:label="Grupo de parâmetros - H - TP - Cons" sap:content-version="1">
+				<Key><PropertyRef Name="GrupoParametroTopo"/><PropertyRef Name="DraftUUID"/><PropertyRef Name="IsActiveEntity"/></Key><Property Name="Activation_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Edit_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Preparation_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Validation_ac" Type="Edm.Boolean" sap:label="Dyn. Aktions-Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="GrupoParametroTopo" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase" sap:label="Código"
+					sap:quickinfo="Código do Grupo de Parâmetros - Topo"/><Property Name="Descricao" Type="Edm.String" MaxLength="230" sap:display-format="UpperCase" sap:label="Descrição"
+					sap:quickinfo="Descrição Grupo de Parâmetros Topo"/><Property Name="LegislacaoUUID" Type="Edm.Guid" sap:label="Legislação" sap:quickinfo="Legislação UUID"/><Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="DraftUUID" Type="Edm.Guid" Nullable="false" sap:label="Schlüssel"/><Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Esboço criado a"/><Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Última modificação do esboço a"/><Property Name="HasActiveEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tem documento ativo" sap:sortable="false"/><Property Name="HasDraftEntity" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Tem esboço" sap:sortable="false"/><Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false" sap:display-format="UpperCase" sap:label="Está ativo"
+					sap:sortable="false"/><NavigationProperty Name="DraftAdministrativeData" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_078CA14C1EF9849092A1A092760B534D"
+					FromRole="FromRole_assoc_078CA14C1EF9849092A1A092760B534D" ToRole="ToRole_assoc_078CA14C1EF9849092A1A092760B534D"/><NavigationProperty Name="SiblingEntity" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_055400EA131D08245A20E1768C6D1B55"
+					FromRole="FromRole_assoc_055400EA131D08245A20E1768C6D1B55" ToRole="ToRole_assoc_055400EA131D08245A20E1768C6D1B55"/><NavigationProperty Name="to_det" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_089AAE1FF172773D7CEF73E505DCA825"
+					FromRole="FromRole_assoc_089AAE1FF172773D7CEF73E505DCA825" ToRole="ToRole_assoc_089AAE1FF172773D7CEF73E505DCA825"/><NavigationProperty Name="to_dettp" Relationship="ZSGA_C_GRPPARHTP_CDS.assoc_08143EDD353911E5A4469265B08AFC5B"
+					FromRole="FromRole_assoc_08143EDD353911E5A4469265B08AFC5B" ToRole="ToRole_assoc_08143EDD353911E5A4469265B08AFC5B"/></EntityType>
+			<EntityType Name="ZSGA_I_GrpParDetType" sap:label="Grupo de Parâmetros - LINHAS" sap:content-version="1">
+				<Key><PropertyRef Name="GrupoParametroTopo"/><PropertyRef Name="GrupoParametroDet"/></Key><Property Name="GrupoParametroTopo" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase"
+					sap:label="ID do Grp Par T" sap:quickinfo="Código do Grupo de Parâmetros - Topo"/><Property Name="GrupoParametroDet" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase"
+					sap:label="ID do Grp Par D" sap:quickinfo="Código do Grupo de Parâmetros - Detalhe"/><Property Name="Parametros" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="ID do Parâmetro"
+					sap:quickinfo="Código do Parâmetro"/><Property Name="ValorMaximo" Type="Edm.String" MaxLength="5" sap:display-format="NonNegative" sap:label="Val Máx Param"
+					sap:quickinfo="Valor Máximo do Parâmetro"/><Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/></EntityType>
+			<EntityType Name="ZSGA_I_GrpParHType" sap:label="Grupo de parâmetros - Cabeçalho" sap:content-version="1">
+				<Key><PropertyRef Name="GrupoParametroTopo"/></Key><Property Name="GrupoParametroTopo" Type="Edm.String" Nullable="false" MaxLength="20" sap:display-format="UpperCase"
+					sap:label="ID do Grp Par T" sap:quickinfo="Código do Grupo de Parâmetros - Topo"/><Property Name="Descricao" Type="Edm.String" MaxLength="230" sap:display-format="UpperCase" sap:label="Desc. Grp. Par. Topo"
+					sap:quickinfo="Descrição Grupo de Parâmetros Topo"/><Property Name="LegislacaoUUID" Type="Edm.Guid" sap:label="Legislação UUID"/><Property Name="ChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Registro da hora"
+					sap:quickinfo="Registro hora UTC forma descritiva (JJJJMMTThhmmssmmmuuun)"/><Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/><Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Nome do usuário"/></EntityType>
+			<ComplexType Name="ValidationFunctionResult"><Property Name="IsValid" Type="Edm.Boolean" sap:label="É válido"/></ComplexType>
+			<Association Name="assoc_ECB9F9C0BF431BC58AC98F431336AC0B" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" Multiplicity="1" Role="FromRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B"/><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" Multiplicity="0..1" Role="ToRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B"/></Association>
+			<Association Name="assoc_E3EB8DB55F13EFC8673981397B83E811" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" Multiplicity="1" Role="FromRole_assoc_E3EB8DB55F13EFC8673981397B83E811"/><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParHType" Multiplicity="*" Role="ToRole_assoc_E3EB8DB55F13EFC8673981397B83E811"/></Association>
+			<Association Name="assoc_B8D5AA74FC51120079D38FF4D8BB9A2D" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" Multiplicity="1" Role="FromRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"/><End Type="ZSGA_C_GRPPARHTP_CDS.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"/></Association>
+			<Association Name="assoc_078CA14C1EF9849092A1A092760B534D" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" Multiplicity="1" Role="FromRole_assoc_078CA14C1EF9849092A1A092760B534D"/><End Type="ZSGA_C_GRPPARHTP_CDS.I_DraftAdministrativeDataType" Multiplicity="0..1" Role="ToRole_assoc_078CA14C1EF9849092A1A092760B534D"/></Association>
+			<Association Name="assoc_055400EA131D08245A20E1768C6D1B55" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" Multiplicity="1" Role="FromRole_assoc_055400EA131D08245A20E1768C6D1B55"/><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" Multiplicity="0..1" Role="ToRole_assoc_055400EA131D08245A20E1768C6D1B55"/></Association>
+			<Association Name="assoc_089AAE1FF172773D7CEF73E505DCA825" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" Multiplicity="1" Role="FromRole_assoc_089AAE1FF172773D7CEF73E505DCA825"/><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParDetType" Multiplicity="*" Role="ToRole_assoc_089AAE1FF172773D7CEF73E505DCA825"/></Association>
+			<Association Name="assoc_08143EDD353911E5A4469265B08AFC5B" sap:content-version="1"><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" Multiplicity="1" Role="FromRole_assoc_08143EDD353911E5A4469265B08AFC5B"/><End Type="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" Multiplicity="*" Role="ToRole_assoc_08143EDD353911E5A4469265B08AFC5B"/></Association>
+			<EntityContainer Name="ZSGA_C_GRPPARHTP_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="I_DraftAdministrativeData" EntityType="ZSGA_C_GRPPARHTP_CDS.I_DraftAdministrativeDataType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZSGA_C_GrpParDetTP" EntityType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZSGA_C_GrpParHTP" EntityType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZSGA_I_GrpParDet" EntityType="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParDetType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZSGA_I_GrpParH" EntityType="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParHType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/>
+				<AssociationSet Name="assoc_08143EDD353911E5A4469265B08AFC5B" Association="ZSGA_C_GRPPARHTP_CDS.assoc_08143EDD353911E5A4469265B08AFC5B"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParHTP" Role="FromRole_assoc_08143EDD353911E5A4469265B08AFC5B"/><End EntitySet="ZSGA_C_GrpParDetTP" Role="ToRole_assoc_08143EDD353911E5A4469265B08AFC5B"/></AssociationSet>
+				<AssociationSet Name="assoc_ECB9F9C0BF431BC58AC98F431336AC0B" Association="ZSGA_C_GRPPARHTP_CDS.assoc_ECB9F9C0BF431BC58AC98F431336AC0B"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParDetTP" Role="FromRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B"/><End EntitySet="ZSGA_C_GrpParDetTP" Role="ToRole_assoc_ECB9F9C0BF431BC58AC98F431336AC0B"/></AssociationSet>
+				<AssociationSet Name="assoc_089AAE1FF172773D7CEF73E505DCA825" Association="ZSGA_C_GRPPARHTP_CDS.assoc_089AAE1FF172773D7CEF73E505DCA825"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParHTP" Role="FromRole_assoc_089AAE1FF172773D7CEF73E505DCA825"/><End EntitySet="ZSGA_I_GrpParDet" Role="ToRole_assoc_089AAE1FF172773D7CEF73E505DCA825"/></AssociationSet>
+				<AssociationSet Name="assoc_B8D5AA74FC51120079D38FF4D8BB9A2D" Association="ZSGA_C_GRPPARHTP_CDS.assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParDetTP" Role="FromRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"/><End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_B8D5AA74FC51120079D38FF4D8BB9A2D"/></AssociationSet>
+				<AssociationSet Name="assoc_078CA14C1EF9849092A1A092760B534D" Association="ZSGA_C_GRPPARHTP_CDS.assoc_078CA14C1EF9849092A1A092760B534D"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParHTP" Role="FromRole_assoc_078CA14C1EF9849092A1A092760B534D"/><End EntitySet="I_DraftAdministrativeData" Role="ToRole_assoc_078CA14C1EF9849092A1A092760B534D"/></AssociationSet>
+				<AssociationSet Name="assoc_E3EB8DB55F13EFC8673981397B83E811" Association="ZSGA_C_GRPPARHTP_CDS.assoc_E3EB8DB55F13EFC8673981397B83E811"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParDetTP" Role="FromRole_assoc_E3EB8DB55F13EFC8673981397B83E811"/><End EntitySet="ZSGA_I_GrpParH" Role="ToRole_assoc_E3EB8DB55F13EFC8673981397B83E811"/></AssociationSet>
+				<AssociationSet Name="assoc_055400EA131D08245A20E1768C6D1B55" Association="ZSGA_C_GRPPARHTP_CDS.assoc_055400EA131D08245A20E1768C6D1B55"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZSGA_C_GrpParHTP" Role="FromRole_assoc_055400EA131D08245A20E1768C6D1B55"/><End EntitySet="ZSGA_C_GrpParHTP" Role="ToRole_assoc_055400EA131D08245A20E1768C6D1B55"/></AssociationSet>
+				<FunctionImport Name="ZSGA_C_GrpParDetTPPreparation" ReturnType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" EntitySet="ZSGA_C_GrpParDetTP"
+					m:HttpMethod="POST" sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" sap:applicable-path="Preparation_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="GrupoParametroDet" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZSGA_C_GrpParDetTPValidation" ReturnType="ZSGA_C_GRPPARHTP_CDS.ValidationFunctionResult" m:HttpMethod="GET"
+					sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType" sap:applicable-path="Validation_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="GrupoParametroDet" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZSGA_C_GrpParHTPActivation" ReturnType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" EntitySet="ZSGA_C_GrpParHTP"
+					m:HttpMethod="POST" sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" sap:applicable-path="Activation_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/></FunctionImport>
+				<FunctionImport Name="ZSGA_C_GrpParHTPEdit" ReturnType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" EntitySet="ZSGA_C_GrpParHTP"
+					m:HttpMethod="POST" sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" sap:applicable-path="Edit_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="PreserveChanges" Type="Edm.Boolean" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZSGA_C_GrpParHTPPreparation" ReturnType="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" EntitySet="ZSGA_C_GrpParHTP"
+					m:HttpMethod="POST" sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" sap:applicable-path="Preparation_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+				<FunctionImport Name="ZSGA_C_GrpParHTPValidation" ReturnType="ZSGA_C_GRPPARHTP_CDS.ValidationFunctionResult" m:HttpMethod="GET"
+					sap:action-for="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType" sap:applicable-path="Validation_ac"><Parameter Name="GrupoParametroTopo" Type="Edm.String" Mode="In" MaxLength="20"/><Parameter Name="DraftUUID" Type="Edm.Guid" Mode="In"/><Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In"/><Parameter Name="SideEffectsQualifier" Type="Edm.String" Mode="In" Nullable="true"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParDetTP">
+				<Annotation Term="Common.DraftRoot">
+					<Record><PropertyValue Property="PreparationAction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParDetTPPreparation"/><PropertyValue Property="ValidationFunction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParDetTPValidation"/></Record>
+				</Annotation>
+				<Annotation Term="Common.DraftNode">
+					<Record><PropertyValue Property="PreparationAction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParDetTPPreparation"/><PropertyValue Property="ValidationFunction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParDetTPValidation"/></Record>
+				</Annotation>
+				<Annotation Term="Common.DraftActivationVia">
+					<Collection>
+						<String>ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTP</String>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTP">
+				<Annotation Term="Common.DraftRoot">
+					<Record><PropertyValue Property="ActivationAction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTPActivation"/><PropertyValue Property="EditAction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTPEdit"/><PropertyValue Property="PreparationAction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTPPreparation"/><PropertyValue Property="ValidationFunction" String="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GRPPARHTP_CDS_Entities/ZSGA_C_GrpParHTPValidation"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParDetTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>GrupoParametroTopo</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_C_GrpParHTPType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>GrupoParametroTopo</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParDetType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>GrupoParametroDet</PropertyPath>
+						<PropertyPath>GrupoParametroTopo</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZSGA_C_GRPPARHTP_CDS.ZSGA_I_GrpParHType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>GrupoParametroTopo</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://usdpedra:44320/sap/opu/odata/sap/ZSGA_C_GRPPARHTP_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://usdpedra:44320/sap/opu/odata/sap/ZSGA_C_GRPPARHTP_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
